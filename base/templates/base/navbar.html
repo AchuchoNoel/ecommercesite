@@ -1,0 +1,25 @@
+<style>
+    .nav{
+        display: flex;
+        background-color: rgb(65, 104, 189);
+    }
+    .navbar{
+        display: flex;
+        color: rosybrown;
+    }
+</style>
+<nav class="nav">
+    <h1>LAMELO SHOPPING</h1>
+    <div class="navbar">
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'add' %}">Add an item</a></li>
+            {% if not request.user.is_authenticated %}
+
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}">Login</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>

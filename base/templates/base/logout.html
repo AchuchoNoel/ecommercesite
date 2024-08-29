@@ -1,0 +1,11 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+<h2>Do you really wan't to logout?</h2>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">yes logout</button>
+
+</form>
+<a href="{% url 'home' %}">cancel</a>
+{% endblock content %}
